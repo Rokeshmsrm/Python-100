@@ -15,25 +15,28 @@
 # Thank you for choosing Python Pizza Deliveries !
 # Your final bill is: $28.
 
-pizza = input("Welcome! Place your oreder S or M or L?\n")
-S = 15
-M = 20
-L = 25
+print("Thank you for choosing Python Pizza Deliveries!")
+size = input("What size pizza do you want? S, M, or L\n")
+add_pepperoni = input("Do you want pepperoni? Y or N\n")
+extra_cheese = input("Do you want extra cheese? Y or N\n") 
+# 🚨 Don't change the code above 👆
+# Write your code below this line 👇
+
 bill = 0
-# input("Add pepperoni for small pizza (y or N):\n")
-# add_pep_M_or_L = input("Add pepperoni for medium or large pizza (y or N):\n")
-add_pep_S = 2
-add_pep_M_or_L = 3
-add_extra_cheese = 1
-if pizza == S:
-    bill = 15
-    print("You should pay 15.")
-    want_pep_s = input("Want pepperoni for small pizza (Y or N):\n")
-    bill += 2
-    print(f"Your total is {bill}.")
-elif pizza == M:
-    bill = 20
-    print("You should pay 20.")
+if size == "S":
+    bill += 15
+elif size == "M":
+    bill += 20
 else:
-    bill = 25
-    print("you should pay 25.")
+    bill += 25
+
+if add_pepperoni == "Y":
+    if size == "S":
+        bill += 2
+    else:
+        bill += 3
+
+if extra_cheese == "Y":
+    bill += 1
+
+print(f"Your final bill is: ${bill}.")
